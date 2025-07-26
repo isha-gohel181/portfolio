@@ -1,36 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  Github, 
-  Linkedin, 
-  ExternalLink, 
-  Code2, 
-  Database, 
-  Globe, 
+import React, { useState, useEffect } from "react";
+import {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  ExternalLink,
+  Code2,
+  Database,
+  Globe,
   Award,
   ChevronDown,
   Menu,
+  Palette,
+  Server,
+  Code,
   X,
   MapPin,
   Calendar,
   User,
   Briefcase,
-  GraduationCap
-} from 'lucide-react';
+  GraduationCap,
+} from "lucide-react";
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState({});
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'achievements', label: 'Achievements' },
-    { id: 'contact', label: 'Contact' }
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "achievements", label: "Achievements" },
+    { id: "contact", label: "Contact" },
   ];
 
   const projects = [
@@ -96,50 +99,54 @@ const Portfolio = () => {
   ];
 
   const skills = {
-    "Languages": ["HTML", "CSS", "JavaScript", "PHP", "C/C++", "SQL"],
-    "Frontend": ["React.js", "Bootstrap 5", "Tailwind CSS", "ShadCN UI"],
-    "Backend": ["Node.js", "Express.js", "MongoDB"],
-    "Tools": ["VS Code", "Git", "GitHub", "npm", "Chrome DevTools"]
+    "Frontend": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap 5", "ShadCN UI"],
+    "Backend": ["Node.js", "Express.js", "PHP"],
+    "Database": ["MongoDB", "MySQL"],
+    "Languages": ["C/C++", "SQL"],
+    "Tools": ["Git", "GitHub", "VS Code", "npm", "Chrome DevTools"]
   };
 
   const achievements = [
     {
       title: "Google Cloud Skill Badge - Prompt Design in Vertex AI",
       date: "April 2025",
-      type: "Certification"
+      type: "Certification",
     },
     {
       title: "Google Cloud Skill Badge - Build Real World AI Applications",
       date: "April 2025",
-      type: "Certification"
+      type: "Certification",
     },
     {
       title: "C Programming Competition - FLASH@SSCCS",
       date: "2022",
-      type: "Competition"
+      type: "Competition",
     },
     {
       title: "C++ Programming Competition - FLASH@SSCCS",
       date: "2023",
-      type: "Competition"
+      type: "Competition",
     },
     {
       title: "Computer & IT Exhibition Participant",
       date: "2024",
-      type: "Exhibition"
-    }
+      type: "Exhibition",
+    },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
+      const sections = navItems.map((item) => item.id);
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -147,32 +154,32 @@ const Portfolio = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: "0px 0px -50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
+          setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
         }
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('[data-animate]');
-    elements.forEach(el => observer.observe(el));
+    const elements = document.querySelectorAll("[data-animate]");
+    elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -454,39 +461,48 @@ const Portfolio = () => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="text-4xl font-bold text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Technical Skills
               </span>
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {Object.entries(skills).map(([category, items], index) => (
                 <div
                   key={category}
-                  className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+                  className="bg-gray-800 rounded-xl p-5 sm:p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    {category === "Languages" && (
-                      <Code2 className="text-blue-400" size={24} />
-                    )}
+                  <div className="flex items-center gap-3 mb-4 sm:mb-6">
                     {category === "Frontend" && (
-                      <Globe className="text-blue-400" size={24} />
+                      <Palette className="w-6 h-6 text-blue-400" />
                     )}
                     {category === "Backend" && (
-                      <Database className="text-blue-400" size={24} />
+                      <Server className="w-6 h-6 text-green-400" />
+                    )}
+                    {category === "Database" && (
+                      <Database className="w-6 h-6 text-yellow-400" />
+                    )}
+                    {category === "Languages" && (
+                      <Code className="w-6 h-6 text-pink-400" />
                     )}
                     {category === "Tools" && (
-                      <Briefcase className="text-blue-400" size={24} />
+                      <Code className="w-6 h-6 text-cyan-400" />
                     )}
-                    <h3 className="text-lg font-semibold">{category}</h3>
+
+                    <h3 className="text-base sm:text-lg font-semibold text-white">
+                      {category}
+                    </h3>
                   </div>
-                  <div className="space-y-3">
+
+                  <div className="flex flex-wrap gap-2">
                     {items.map((skill, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                        <span className="text-gray-300">{skill}</span>
-                      </div>
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-gray-700 text-xs sm:text-sm rounded-full text-gray-300 hover:bg-gray-600 transition-colors"
+                      >
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -572,7 +588,7 @@ const Portfolio = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <a
-                  href="mailto:ishagohel181@gmail.com"
+                  href="mailto:ishagohel181@gmail.com?subject=Hello Isha&body=Hi, I saw your portfolio..."
                   className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
                 >
                   <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors duration-300">
@@ -600,7 +616,7 @@ const Portfolio = () => {
 
               <div className="space-y-6">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/isha-gohel-a5b855314/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
@@ -615,7 +631,7 @@ const Portfolio = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://github.com/isha-gohel181"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
