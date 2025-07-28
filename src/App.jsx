@@ -1,3 +1,6 @@
+// src/App.jsx
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-229P37FDN8");
 import React, { useState, useEffect } from "react";
 import {
   Mail,
@@ -21,6 +24,7 @@ import {
   Briefcase,
   GraduationCap,
 } from "lucide-react";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -99,11 +103,19 @@ const Portfolio = () => {
   ];
 
   const skills = {
-    "Frontend": ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap 5", "ShadCN UI"],
-    "Backend": ["Node.js", "Express.js", "PHP"],
-    "Database": ["MongoDB", "MySQL"],
-    "Languages": ["C/C++", "SQL"],
-    "Tools": ["Git", "GitHub", "VS Code", "npm", "Chrome DevTools"]
+    Frontend: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Tailwind CSS",
+      "Bootstrap 5",
+      "ShadCN UI",
+    ],
+    Backend: ["Node.js", "Express.js", "PHP"],
+    Database: ["MongoDB", "MySQL"],
+    Languages: ["C/C++", "SQL"],
+    Tools: ["Git", "GitHub", "VS Code", "npm", "Chrome DevTools"],
   };
 
   const achievements = [
@@ -185,6 +197,8 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
+      <RouteChangeTracker />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
