@@ -660,6 +660,33 @@ const Portfolio = () => {
                 </a>
               </div>
             </div>
+
+            <div className="text-center mt-12">
+              <a
+                href="/Isha_Resume.pdf"
+                download
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-4-4m4 4l4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Download My Resume
+              </a>
+              <p className="text-gray-400 text-sm mt-3">
+                Get a detailed overview of my experience and skills
+              </p>
+            </div>
+            
           </div>
         </div>
       </section>
