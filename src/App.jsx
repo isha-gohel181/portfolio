@@ -603,20 +603,20 @@ const Portfolio = () => {
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* <div className="space-y-6"> */}
-              <a
-                href="mailto:ishagohel181@gmail.com?subject=Hello Isha&body=Hi, I saw your portfolio..."
-                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-              >
-                <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors duration-300">
-                  <Mail className="text-blue-400" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-gray-300">ishagohel181@gmail.com</p>
-                </div>
-              </a>
+                <a
+                  href="mailto:ishagohel181@gmail.com?subject=Hello Isha&body=Hi, I saw your portfolio..."
+                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+                >
+                  <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors duration-300">
+                    <Mail className="text-blue-400" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Email</h3>
+                    <p className="text-gray-300">ishagohel181@gmail.com</p>
+                  </div>
+                </a>
 
-              {/* <a
+                {/* <a
                   href="tel:+919173340535"
                   className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
                 >
@@ -631,35 +631,35 @@ const Portfolio = () => {
               {/* </div> */}
 
               {/* <div className="space-y-6"> */}
-              <a
-                href="https://www.linkedin.com/in/isha-gohel-a5b855314/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-              >
-                <div className="p-3 bg-blue-600/10 rounded-lg group-hover:bg-blue-600/20 transition-colors duration-300">
-                  <Linkedin className="text-blue-500" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">LinkedIn</h3>
-                  <p className="text-gray-300">Connect with me</p>
-                </div>
-              </a>
+                <a
+                  href="https://www.linkedin.com/in/isha-gohel-a5b855314/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+                >
+                  <div className="p-3 bg-blue-600/10 rounded-lg group-hover:bg-blue-600/20 transition-colors duration-300">
+                    <Linkedin className="text-blue-500" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">LinkedIn</h3>
+                    <p className="text-gray-300">Connect with me</p>
+                  </div>
+                </a>
 
-              <a
-                href="https://github.com/isha-gohel181"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-              >
-                <div className="p-3 bg-gray-700/50 rounded-lg group-hover:bg-gray-600/50 transition-colors duration-300">
-                  <Github className="text-gray-300" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white">GitHub</h3>
-                  <p className="text-gray-300">View my repositories</p>
-                </div>
-              </a>
+                <a
+                  href="https://github.com/isha-gohel181"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+                >
+                  <div className="p-3 bg-gray-700/50 rounded-lg group-hover:bg-gray-600/50 transition-colors duration-300">
+                    <Github className="text-gray-300" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">GitHub</h3>
+                    <p className="text-gray-300">View my repositories</p>
+                  </div>
+                </a>
               {/* </div> */}
             </div>
 
