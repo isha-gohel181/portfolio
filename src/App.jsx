@@ -334,10 +334,10 @@ const Portfolio = () => {
                   <Mail className="text-blue-400" size={20} />
                   <span className="text-gray-300">ishagohel181@gmail.com</span>
                 </div>
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <Phone className="text-blue-400" size={20} />
                   <span className="text-gray-300">+91 9173340535</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
@@ -434,19 +434,21 @@ const Portfolio = () => {
                       </div>
 
                       <div className="flex gap-4">
-                        {/* Live Demo */}
-                        <a
-                          href={project.liveDemoLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-sm font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-                        >
-                          <ExternalLink size={16} />
-                          Live Demo
-                        </a>
+                        {/* Live Demo - Only show if liveDemoLink exists */}
+                        {project.liveDemoLink && (
+                          <a
+                            href={project.liveDemoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-sm font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                          >
+                            <ExternalLink size={16} />
+                            Live Demo
+                          </a>
+                        )}
 
                         {/* Source Code */}
-                        <a
+                        {/* <a
                           href={project.sourceCodeLink}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -454,7 +456,7 @@ const Portfolio = () => {
                         >
                           <Github size={16} />
                           Source Code
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
@@ -599,22 +601,22 @@ const Portfolio = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <a
-                  href="mailto:ishagohel181@gmail.com?subject=Hello Isha&body=Hi, I saw your portfolio..."
-                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors duration-300">
-                    <Mail className="text-blue-400" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">Email</h3>
-                    <p className="text-gray-300">ishagohel181@gmail.com</p>
-                  </div>
-                </a>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* <div className="space-y-6"> */}
+              <a
+                href="mailto:ishagohel181@gmail.com?subject=Hello Isha&body=Hi, I saw your portfolio..."
+                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+              >
+                <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors duration-300">
+                  <Mail className="text-blue-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white">Email</h3>
+                  <p className="text-gray-300">ishagohel181@gmail.com</p>
+                </div>
+              </a>
 
-                <a
+              {/* <a
                   href="tel:+919173340535"
                   className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
                 >
@@ -625,43 +627,43 @@ const Portfolio = () => {
                     <h3 className="font-semibold text-white">Phone</h3>
                     <p className="text-gray-300">+91 9173340535</p>
                   </div>
-                </a>
-              </div>
+                </a> */}
+              {/* </div> */}
 
-              <div className="space-y-6">
-                <a
-                  href="https://www.linkedin.com/in/isha-gohel-a5b855314/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-blue-600/10 rounded-lg group-hover:bg-blue-600/20 transition-colors duration-300">
-                    <Linkedin className="text-blue-500" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">LinkedIn</h3>
-                    <p className="text-gray-300">Connect with me</p>
-                  </div>
-                </a>
+              {/* <div className="space-y-6"> */}
+              <a
+                href="https://www.linkedin.com/in/isha-gohel-a5b855314/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+              >
+                <div className="p-3 bg-blue-600/10 rounded-lg group-hover:bg-blue-600/20 transition-colors duration-300">
+                  <Linkedin className="text-blue-500" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white">LinkedIn</h3>
+                  <p className="text-gray-300">Connect with me</p>
+                </div>
+              </a>
 
-                <a
-                  href="https://github.com/isha-gohel181"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
-                >
-                  <div className="p-3 bg-gray-700/50 rounded-lg group-hover:bg-gray-600/50 transition-colors duration-300">
-                    <Github className="text-gray-300" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">GitHub</h3>
-                    <p className="text-gray-300">View my repositories</p>
-                  </div>
-                </a>
-              </div>
+              <a
+                href="https://github.com/isha-gohel181"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+              >
+                <div className="p-3 bg-gray-700/50 rounded-lg group-hover:bg-gray-600/50 transition-colors duration-300">
+                  <Github className="text-gray-300" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white">GitHub</h3>
+                  <p className="text-gray-300">View my repositories</p>
+                </div>
+              </a>
+              {/* </div> */}
             </div>
 
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <a
                 href="/Isha_Resume.pdf"
                 download
@@ -681,12 +683,11 @@ const Portfolio = () => {
                   />
                 </svg>
                 Download My Resume
-              </a>
+              </a>                                                                                                                                     
               <p className="text-gray-400 text-sm mt-3">
                 Get a detailed overview of my experience and skills
               </p>
-            </div>
-            
+            </div> */}
           </div>
         </div>
       </section>
